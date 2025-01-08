@@ -102,7 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value;
 
   
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+const emailRegex =
+  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|co|io|info|me)$/;
 
     if (name && emailRegex.test(email)) {
          localStorage.setItem("name", name);
