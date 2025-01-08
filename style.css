@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Blog-Name: #FFFFFF;
+    --Tagline: #F5F5DC;
+    --Explore-Posts: #FF4500;
+    --dodger: #1E90FF;
+    --Excerpt: #424242;
+    --beige: #F5F5DC;
+    --placeholder: #A9A9A9;
+}
+
+#Hero-Section {
+    background: url(img/james-donaldson-toPRrcyAIUY-unsplash.jpg) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Hero-Section .contienar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 60px;
+    width: 60%;
+    margin: auto;
+}
+
+#Hero-Section .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#Hero-Section .blog-name h1 {
+    color: var(--Blog-Name);
+    font-size: 4rem;
+    text-shadow: 0px 13px 4px #d6cdcd;
+}
+
+#Hero-Section .Tagline {
+    color: var(--Tagline);
+    font-size: 1.4rem;
+}
+
+.Explore-Posts {
+    width: 25%;
+    height: 50px;
+    background-color: var(--Explore-Posts);
+    border-radius: 10px;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.Explore-Posts p {
+    color: var(--Blog-Name);
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.Explore-Posts:hover {
+    background-color: #ff450099;
+    transform: scale(1.1);
+}
+
+#Recent-post {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.posts-grid {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.post-card img {
+    width: 90% !important;
+   border-radius: 10px;
+   margin: auto;
+
+    transition: 0.3s ease;
+    
+}
+
+.post-card img:hover  {
+    transform: scale(1.05);
+}
+
+.post-card h2 {
+    color: var(--dodger);
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.post-card h2:hover {
+    color: var(--Explore-Posts);
+}
+
+.post-card p {
+    color: var(--Excerpt);
+    margin: 10px 5px;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.subscription-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--Tagline);
+    border: 2px solid var(--dodger);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.subscription-form h2 {
+    color: var(--dodger);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.subscription-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #A9A9A9;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.subscription-form input::placeholder {
+    color: var(--placeholder);
+}
+
+.subscription-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--Explore-Posts);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscription-form button:hover {
+    background-color: #FF6347;
+}
+
+@media (min-width: 1200px) {
+    .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .Explore-Posts {
+        width: 30%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Explore-Posts {
+        width: 35%;
+    }
+}
+
+@media (max-width: 767px) {
+    #Hero-Section .contienar {
+        width: 80%;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .Explore-Posts {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    #Hero-Section .contienar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.post-card img {
+    width: 100%;
+}
+
+.post-card h2 {
+    font-size: 1.5rem;
+}
+
+.subscription-form {
+    padding: 10px;
+    width: 90%;
+}
+
+.subscription-form input,
+.subscription-form button {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.post-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.post-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
