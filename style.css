@@ -38,6 +38,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 30px;
 }
 
@@ -103,14 +104,14 @@
 
 .post-card img {
     width: 90% !important;
-   border-radius: 10px;
-   margin: auto;
+    border-radius: 10px;
+    margin: auto;
 
     transition: 0.3s ease;
-    
+
 }
 
-.post-card img:hover  {
+.post-card img:hover {
     transform: scale(1.05);
 }
 
@@ -187,6 +188,7 @@
 .hidden {
     display: none;
 }
+
 @media (min-width: 1200px) {
     .posts-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -225,6 +227,10 @@
     #Hero-Section .contienar {
         width: 100%;
         padding: 20px;
+
+        .blog-name h1 {
+            font-size: 3rem;
+        }
     }
 
     h1 {
