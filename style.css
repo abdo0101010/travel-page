@@ -272,3 +272,15 @@
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
 }
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--button-hover);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--beige);
+}
