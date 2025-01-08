@@ -101,17 +101,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
 
-    // التحقق من أن البريد الإلكتروني صالح
+  
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
     if (name && emailRegex.test(email)) {
-      // إخفاء النموذج
+         localStorage.setItem("name", name);
+         localStorage.setItem("email", email);
       subscribeForm.style.display = "none";
+    
 
-      // إظهار رسالة التأكيد
       confirmationMessage.classList.remove("hidden");
     } else {
       alert("please enter a valid email address.");}
-      
+
   });
 });
