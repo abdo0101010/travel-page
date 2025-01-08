@@ -90,3 +90,28 @@ function change_subtitle() {
 }
 
 change_subtitle();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const subscribeForm = document.getElementById("subscribeForm");
+  const confirmationMessage = document.getElementById("confirmationMessage");
+
+  subscribeForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    // التحقق من أن البريد الإلكتروني صالح
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    if (name && emailRegex.test(email)) {
+      // إخفاء النموذج
+      subscribeForm.style.display = "none";
+
+      // إظهار رسالة التأكيد
+      confirmationMessage.classList.remove("hidden");
+    } else {
+      alert("please enter a valid email address.");}
+      
+  });
+});

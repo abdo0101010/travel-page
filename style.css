@@ -12,6 +12,7 @@
     --Excerpt: #424242;
     --beige: #F5F5DC;
     --placeholder: #A9A9A9;
+    --button-hover: #ff450099;
 }
 
 #Hero-Section {
@@ -69,7 +70,7 @@
 }
 
 .Explore-Posts:hover {
-    background-color: #ff450099;
+    background-color: var(--button-hover);
     transform: scale(1.1);
 }
 
@@ -133,7 +134,7 @@
 }
 
 .subscription-form {
-    max-width: 600px;
+    width: 80%;
     margin: 50px auto;
     padding: 20px;
     background-color: var(--Tagline);
@@ -174,9 +175,18 @@
 }
 
 .subscription-form button:hover {
-    background-color: #FF6347;
+    background-color: var(--button-hover);
 }
 
+#confirmationMessage {
+    color: var(--dodger);
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
 @media (min-width: 1200px) {
     .posts-grid {
         grid-template-columns: repeat(3, 1fr);
