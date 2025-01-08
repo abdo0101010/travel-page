@@ -113,7 +113,7 @@ const emailRegex =
 
       confirmationMessage.classList.remove("hidden");
     } else {
-      alert("please enter a valid email address.");}
+      alert("please enter a valid email address and vaild name. ");}
 
   });
 });

@@ -88,6 +88,8 @@
     width: 100%;
     display: grid;
     gap: 20px;
+
+
 }
 
 .post-card {
@@ -272,6 +274,7 @@
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
 }
+
 ::-webkit-scrollbar {
     width: 15px;
 }
